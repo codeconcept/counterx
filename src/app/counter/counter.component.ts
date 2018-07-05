@@ -4,6 +4,7 @@ import { Component, OnInit } from "@angular/core";
 import { Store, select } from "@ngrx/store";
 import { of } from "rxjs";
 import { Detail } from "../models/detail";
+import { IncrementCounter, DecrementCounter } from "../state/app.actions";
 
 @Component({
   selector: "cc-counter",
@@ -27,10 +28,10 @@ export class CounterComponent implements OnInit {
   }
 
   increment() {
-    this.store.dispatch({ type: "INCREMENT", payload: 1 });
+    this.store.dispatch(new IncrementCounter(1));
   }
 
   decrement() {
-    this.store.dispatch({ type: "DECREMENT", payload: 1 });
+    this.store.dispatch(new DecrementCounter(1));
   }
 }
