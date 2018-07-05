@@ -1,6 +1,6 @@
 import { State } from "./app.state";
 import { Detail } from "../models/detail";
-import { CounterActionTypes } from './app.actions';
+import { CounterActionTypes, CounterActions } from './app.actions';
 
 const initialState: State = {
   title: 'Nombre de personnes présentes',
@@ -8,7 +8,7 @@ const initialState: State = {
   details: []
 };
 
-export function reducer(state = initialState, action) {
+export function reducer(state = initialState, action: CounterActions) {
   console.log('in reducer', action);
   switch(action.type) {
     case CounterActionTypes.Increment:
