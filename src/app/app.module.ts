@@ -21,7 +21,7 @@ import {StoreDevtoolsModule} from '@ngrx/store-devtools';
     StoreModule.forRoot({ appState: reducer }),
     StoreDevtoolsModule.instrument({
 			name: 'CounterX devtools',
-			maxAge:5
+			maxAge:15
 		})
   ],
   providers: [],
